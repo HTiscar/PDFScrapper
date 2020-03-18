@@ -11,10 +11,11 @@ technology <- read.csv("ren21_technology.csv")
 colnames(technology) <- c(seq(2008, 2018), "Sector")
 
 tech <- as.data.frame(t(technology[1:11]))
+colnames(tech) <- technology$Sector
 tech$Years <- c(seq(2008, 2018))
 tech$Years <- as.factor(tech$Years)
 tech$Time <- seq_along(tech$Years)
-colnames(tech) <- technology$Sector
+
 
 ### Revelar Plot Estático 
 
